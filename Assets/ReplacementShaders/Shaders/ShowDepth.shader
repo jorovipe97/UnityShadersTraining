@@ -1,5 +1,7 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Hidden/Show Depth"
 {
 	Properties
@@ -80,14 +82,12 @@ Shader "Hidden/Show Depth"
 			struct v2f
 			{
 				float4 vertex : SV_POSITION;
-				float depth : DEPTH;
 			};
 
 			v2f vert(appdata v)
 			{
 				v2f o;
 				o.vertex = UnityObjectToClipPos(v.vertex);
-				o.depth = -mul(UNITY_MATRIX_MV, v.vertex).z *_ProjectionParams.w;
 				return o;
 			}
 
@@ -95,8 +95,7 @@ Shader "Hidden/Show Depth"
 
 			fixed4 frag(v2f i) : SV_Target
 			{
-				float invert = 1 - i.depth;
-				return fixed4(invert, invert, invert, 1) * _Color;
+				return _Color;
 			}
 			ENDCG
 		}
