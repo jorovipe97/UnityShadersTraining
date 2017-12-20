@@ -668,6 +668,10 @@ Prefab:
       propertyPath: m_Height
       value: 13.89
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -1533,14 +1537,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 847528045}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e54b954d13565304a8c4329ac64f8a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ReplacementShader: {fileID: 4800000, guid: cffead7b487d7b5429ca1b401fea6a60, type: 3}
   Tag: 
-  OverDrawColor: {r: 0.091, g: 0.12199998, b: 0.134, a: 0}
+  OverDrawColor: {r: 0.091, g: 0.16176468, b: 0.625, a: 0}
 --- !u!124 &847528047
 Behaviour:
   m_ObjectHideFlags: 0

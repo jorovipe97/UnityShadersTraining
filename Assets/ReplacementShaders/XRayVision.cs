@@ -11,11 +11,12 @@ public class XRayVision : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        StartCoroutine("ToggleXRayView");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.I))
+		/*if (Input.GetKeyDown(KeyCode.I))
         {
             if (toggle)
             {
@@ -28,7 +29,7 @@ public class XRayVision : MonoBehaviour {
                 toggle = true;
             }
             
-        }
+        }*/
 	}
 
     public void ActivteXRay()
@@ -41,5 +42,23 @@ public class XRayVision : MonoBehaviour {
     public void DeActivateXRay()
     {
         cam.ResetReplacementShader();
+    }
+    
+    IEnumerator ToggleXRayView()
+    {
+        // Note: A coroutine does not need be inside a loop
+        while (true)
+        {
+
+            if (toggle)
+                ActivteXRay();
+            else
+                DeActivateXRay();
+
+            toggle = !toggle;
+            yield return new WaitForSeconds(1);
+
+        }
+        
     }
 }
